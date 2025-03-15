@@ -1,0 +1,179 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "BowlingFun",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/BowlingLeague": {
+      "get": {
+        "tags": [
+          "BowlingLeague"
+        ],
+        "operationId": "GetBowlingLeague",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BowlingLeague"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BowlingLeague"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BowlingLeague"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BowlingLeague": {
+        "type": "object",
+        "properties": {
+          "bowlerID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "bowlerFirstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "bowlerMiddleInit": {
+            "type": "string",
+            "nullable": true
+          },
+          "bowlerLastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "teamID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "team": {
+            "$ref": "#/components/schemas/Team"
+          },
+          "bowleraddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "bowlercity": {
+            "type": "string",
+            "nullable": true
+          },
+          "bowlerstate": {
+            "type": "string",
+            "nullable": true
+          },
+          "bowlerzip": {
+            "type": "string",
+            "nullable": true
+          },
+          "bowlerphoneNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Team": {
+        "type": "object",
+        "properties": {
+          "teamID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "teamName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
